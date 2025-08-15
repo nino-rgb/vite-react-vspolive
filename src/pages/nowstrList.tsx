@@ -28,7 +28,7 @@ export const NowstrList = () => {
       </div>
 
       {/* アーカイブ一覧 */}
-      <h2>過去の配信一覧</h2>
+      <h2>配信スケジュール一覧</h2>
       <div>
         {nowstreamings.map((nowstr) => (
           <div key={nowstr.id} className="nowstr-card">
