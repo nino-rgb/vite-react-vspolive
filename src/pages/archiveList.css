@@ -1,0 +1,39 @@
+.archive-container {
+  padding: 2rem;
+}
+
+.archive-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.archive-search {
+  width: 200px;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.archive-buttons {
+  margin-bottom: 1rem;
+}
+
+.archive-buttons button {
+  margin-right: 1rem;
+}
+
+.archive-card {
+  display: flex;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.archive-thumbnail {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  object-fit: cover;
+}

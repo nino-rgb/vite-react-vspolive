@@ -1,0 +1,39 @@
+.nowstr-container {
+  padding: 2rem;
+}
+
+.nowstr-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.nowstr-search {
+  width: 200px;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.nowstr-buttons {
+  margin-bottom: 1rem;
+}
+
+.nowstr-buttons button {
+  margin-right: 1rem;
+}
+
+.nowstr-card {
+  display: flex;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.nowstr-thumbnail {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  object-fit: cover;
+}
