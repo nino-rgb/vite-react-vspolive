@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Nowstreaming } from "model/nowstr";
 import "./nostrList.css";
+import { useNavigate } from "react-router-dom";
 export const NowstrList = () => {
   const [nowstreamings, setNowstrList] = useState<Nowstreaming[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get<Nowstreaming[]>("/nowstreamings?offset=0");
+      const response = await axios.get<Nowstreaming[]>("nowstreamings", { params: { offset: 0 } });
       setNowstrList(response.data);
     })();
   }, [setNowstrList]);
@@ -23,7 +25,7 @@ export const NowstrList = () => {
 
       {/* カテゴリボタン */}
       <div className="nowstr-buttons">
-        <button>📅 過去の配信一覧</button>
+        <button onClick={() => navigate("/archive")}>📅 過去の配信一覧</button>
         <button>👤 所属タレント一覧</button>
       </div>
 

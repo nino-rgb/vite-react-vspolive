@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Archive } from "model/archive";
 import "./ArchiveList.css";
+import { useNavigate } from "react-router-dom";
 export const ArchiveList = () => {
   const [archives, setArchiveList] = useState<Archive[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get<Archive[]>("/archives?offset=0");
+      const response = await axios.get<Archive[]>("archives", { params: { offset: 0 } });
+      console.log("archives:", response.data);
       setArchiveList(response.data);
     })();
   }, [setArchiveList]);
@@ -23,7 +26,7 @@ export const ArchiveList = () => {
 
       {/* カテゴリボタン */}
       <div className="archive-buttons">
-        <button>📅 配信スケジュール</button>
+        <button onClick={() => navigate("/nowstr")}>📅 配信スケジュール</button>
         <button>👤 所属タレント一覧</button>
       </div>
 
