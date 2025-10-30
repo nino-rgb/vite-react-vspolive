@@ -26,7 +26,7 @@ export const ArchiveList = () => {
 
       {/* カテゴリボタン */}
       <div className="archive-buttons">
-        <button onClick={() => navigate("/nowstr")}>📅 配信スケジュール</button>
+        <button onClick={() => navigate("/nowstr")}>📅 配信中一覧</button>
         <button>👤 所属タレント一覧</button>
       </div>
 
