@@ -35,9 +35,20 @@ export const ArchiveList = () => {
       <div>
         {archives.map((archive) => (
           <div key={archive.id} className="archive-card">
-            <img src={archive.video_thumbnail} alt="thumbnail" className="archive-thumbnail" />
+            <a href={archive.outer_link} target="_blank" rel="noopener noreferrer">
+              <img src={archive.video_thumbnail} alt="thumbnail" className="archive-thumbnail" />
+            </a>
             <div>
-              <h3>{archive.video_title}</h3>
+              <h3>
+                <a
+                  href={archive.outer_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  {archive.video_title}
+                </a>
+              </h3>
               <p>{new Date(archive.open_date).toLocaleString()}</p>
             </div>
           </div>
