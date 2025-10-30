@@ -34,9 +34,20 @@ export const NowstrList = () => {
       <div>
         {nowstreamings.map((nowstr) => (
           <div key={nowstr.id} className="nowstr-card">
-            <img src={nowstr.video_thumbnail} alt="thumbnail" className="nowstr-thumbnail" />
+            <a href={nowstr.outer_link} target="_blank" rel="noopener noreferrer">
+              <img src={nowstr.video_thumbnail} alt="thumbnail" className="nowstr-thumbnail" />
+            </a>
             <div>
-              <h3>{nowstr.video_title}</h3>
+              <h3>
+                <a
+                  href={nowstr.outer_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  {nowstr.video_title}
+                </a>
+              </h3>
               <p>{new Date(nowstr.open_date).toLocaleString()}</p>
             </div>
           </div>
