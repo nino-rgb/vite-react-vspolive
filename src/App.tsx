@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
 import axios from "axios";
 import { ArchiveIdProvider } from "./store/archiveContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ArchiveList } from "./pages/archiveList";
 import { NowstrList } from "./pages/nowstrList";
+import { TalentList } from "./pages/talentList";
 
 axios.defaults.baseURL = "http://localhost:4000/api/";
 
@@ -16,6 +16,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/archive" element={<ArchiveList />} />
             <Route path="/nowstr" element={<NowstrList />} />
+            <Route path="/talentlist" element={<TalentList />} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -1,4 +1,4 @@
-export type Talents = {
+export type Talent = {
   id?: number;
   name: string;
   youtube_profile: string;

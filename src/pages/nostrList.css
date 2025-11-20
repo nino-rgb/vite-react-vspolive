@@ -9,10 +9,45 @@
   align-items: center;
 }
 
-.nowstr-search {
-  width: 200px;
-  height: 30px;
-  padding: 0 10px;
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  /* 必要に応じて変更 */
+  margin: 0 auto;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0 14px;
+  border: 1px solid #ccc;
+  border-right: none;
+  /* ← 完全にボタンと接続する */
+  border-radius: 12px 0 0 12px;
+  outline: none;
+  height: 40px;
+  margin: 0;
+  /* ← 余白を完全に消す */
+}
+
+.search-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #ccc;
+  border-left: none;
+  /* ← ここも必要 */
+  border-radius: 0 12px 12px 0;
+  background: #f7f7f7;
+  cursor: pointer;
+  margin: 0;
+  /* ← 余白を消す */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-btn:hover {
+  background: #ececec;
 }
 
 .nowstr-buttons {
