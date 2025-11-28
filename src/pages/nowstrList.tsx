@@ -9,7 +9,7 @@ export const NowstrList = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get<Nowstreaming[]>("nowstreamings", { params: { offset: 0 } });
+      const response = await axios.get<Nowstreaming[]>("/nowstreamings", { params: { offset: 0 } });
       setNowstrList(response.data);
     })();
   }, [setNowstrList]);
@@ -19,14 +19,16 @@ export const NowstrList = () => {
       {/* ヘッダー */}
       <header className="nowstr-header">
         <div style={{ backgroundColor: "#ccc", width: 100, height: 40 }}></div>
-        <input type="text" placeholder="タレント名で検索" className="nowstr-search" />
-        <button>🔍</button>
+        <div className="search-wrapper">
+          <input type="text" placeholder="タレント名で検索" className="search-input" />
+          <button className="search-btn">🔍</button>
+        </div>
       </header>
 
       {/* カテゴリボタン */}
       <div className="nowstr-buttons">
         <button onClick={() => navigate("/archive")}>📅 過去の配信一覧</button>
-        <button>👤 所属タレント一覧</button>
+        <button onClick={() => navigate("/talents")}>👤 所属タレント一覧</button>
       </div>
 
       {/* アーカイブ一覧 */}
