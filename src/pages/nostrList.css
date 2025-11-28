@@ -1,46 +1,48 @@
+/* ページ全体：talent / archive と同じレイアウトに揃える */
 .nowstr-container {
-  padding: 2rem;
+  margin: 40px 0 0;
+  /* 上に少し余白＋左寄せ */
+  padding: 0 40px 40px;
+  /* 左右 40px の余白 */
+  box-sizing: border-box;
 }
 
+/* ヘッダー（ロゴ＋検索） */
 .nowstr-header {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  /* 下のボタンとの間隔 */
 }
 
+/* 検索ボックス周り：他ページと共通の pill 形状 */
 .search-wrapper {
   display: flex;
   align-items: center;
-  width: 320px;
-  /* 必要に応じて変更 */
+  gap: 8px;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
+  /* 検索ボックスは中央寄せ */
 }
 
 .search-input {
   flex: 1;
-  padding: 0 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
   border: 1px solid #ccc;
-  border-right: none;
-  /* ← 完全にボタンと接続する */
-  border-radius: 12px 0 0 12px;
+  font-size: 14px;
   outline: none;
-  height: 40px;
-  margin: 0;
-  /* ← 余白を完全に消す */
 }
 
 .search-btn {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
   border: 1px solid #ccc;
-  border-left: none;
-  /* ← ここも必要 */
-  border-radius: 0 12px 12px 0;
   background: #f7f7f7;
   cursor: pointer;
-  margin: 0;
-  /* ← 余白を消す */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,25 +52,40 @@
   background: #ececec;
 }
 
+/* カテゴリボタン：過去の配信一覧・タレント一覧への切り替え */
 .nowstr-buttons {
-  margin-bottom: 1rem;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
 }
 
 .nowstr-buttons button {
-  margin-right: 1rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
 }
 
+/* タイトル */
+.nowstr-container h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+/* 配信中1件分のカード */
 .nowstr-card {
   display: flex;
-  margin-bottom: 1rem;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem;
-  align-items: center;
 }
 
+/* サムネイル画像 */
 .nowstr-thumbnail {
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
+  width: 120px;
+  height: 70px;
   object-fit: cover;
+  border-radius: 8px;
 }

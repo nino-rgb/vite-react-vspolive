@@ -9,7 +9,7 @@ export const ArchiveList = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get<Archive[]>("archives", { params: { offset: 0 } });
+      const response = await axios.get<Archive[]>("/archives", { params: { offset: 0 } });
       console.log("archives:", response.data);
       setArchiveList(response.data);
     })();
@@ -29,7 +29,7 @@ export const ArchiveList = () => {
       {/* カテゴリボタン */}
       <div className="archive-buttons">
         <button onClick={() => navigate("/nowstr")}>📅 配信中一覧</button>
-        <button onClick={() => navigate("/talentlist")}>👤 所属タレント一覧</button>
+        <button onClick={() => navigate("/talents")}>👤 所属タレント一覧</button>
       </div>
 
       {/* アーカイブ一覧 */}

@@ -16,7 +16,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/archive" element={<ArchiveList />} />
             <Route path="/nowstr" element={<NowstrList />} />
-            <Route path="/talentlist" element={<TalentList />} />
+            <Route path="/talents" element={<TalentList />} />
           </Routes>
         </div>
       </BrowserRouter>

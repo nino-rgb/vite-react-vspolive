@@ -10,11 +10,11 @@ export const TalentList = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get<Talent[]>("talentlist", { params: { offset: 0 } });
+      const response = await axios.get<Talent[]>("/talents", { params: { offset: 0 } });
       console.log("talents:", response.data);
       setTalentList(response.data);
     })();
-  }, [setTalentList]);
+  }, []);
 
   return (
     <div className="talent-in-Page">
@@ -33,6 +33,18 @@ export const TalentList = () => {
       </div>
       {/* タレント一覧 */}
       <h2>タレント一覧</h2>
+      <div className="talent-list-container">
+        {talents.map((talent) => (
+          <div key={talent.id} className="talent-card">
+            <img src={talent.icon_url} alt={talent.name} className="talent-icon" />
+
+            <div className="talent-info">
+              <h3>{talent.name}</h3>
+              <p>{talent.youtube_profile}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
