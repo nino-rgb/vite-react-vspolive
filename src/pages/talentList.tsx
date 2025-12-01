@@ -20,7 +20,6 @@ export const TalentList = () => {
     <div className="talent-in-Page">
       {/* ヘッダー */}
       <header className="archive-header">
-        <div style={{ backgroundColor: "#ccc", width: 100, height: 40 }}></div>
         <div className="search-wrapper">
           <input type="text" placeholder="タレント名で検索" className="search-input" />
           <button className="search-btn">🔍</button>
