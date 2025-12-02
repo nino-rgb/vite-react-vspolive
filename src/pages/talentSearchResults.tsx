@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import axios from "axios";
 
-// ここを model から import！
 import { Talent } from "../model/talent";
 
 export const TalentSearchResults: React.FC = () => {

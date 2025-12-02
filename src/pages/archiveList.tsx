@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const ArchiveList = () => {
   const [archives, setArchiveList] = useState<Archive[]>([]);
   const navigate = useNavigate();
+  const [keywordInput, setKeywordInput] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -20,8 +21,24 @@ export const ArchiveList = () => {
       {/* ヘッダー */}
       <header className="archive-header">
         <div className="search-wrapper">
-          <input type="text" placeholder="タレント名で検索" className="search-input" />
-          <button className="search-btn">🔍</button>
+          <input
+            type="text"
+            placeholder="タレント名で検索"
+            className="search-input"
+            value={keywordInput}
+            onChange={(e) => setKeywordInput(e.target.value)}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              const trimmed = keywordInput.trim();
+              if (!trimmed) return;
+              // 検索結果ページへ遷移
+              navigate(`/talents/search?keyword=${encodeURIComponent(trimmed)}`);
+            }}
+          >
+            🔍
+          </button>
         </div>
       </header>
 
