@@ -78,10 +78,6 @@ export const TalentSearchResults: React.FC = () => {
       </div>
 
       <h2>タレント検索結果</h2>
-
-      {loading && <p>検索中です…</p>}
-      {error && <p className="error">{error}</p>}
-
       {!loading && !error && keyword && talents.length === 0 && <p>該当するタレントが見つかりませんでした。</p>}
 
       <div className="talent-list-container">

@@ -1,0 +1,196 @@
+/*検索 UI （タレント詳細用）*/
+.talent-detail-page .archive-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.talent-detail-page .search-wrapper {
+  display: flex;
+  align-items: center;
+  width: 360px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.talent-detail-page .search-input {
+  flex: 1;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 999px 0 0 999px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.talent-detail-page .search-input::placeholder {
+  color: #aaa;
+}
+
+.talent-detail-page .search-btn {
+  height: 40px;
+  width: 46px;
+  border: 1px solid #ccc;
+  border-radius: 0 999px 999px 0;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.talent-detail-page .search-btn:hover {
+  background: #f5f5f5;
+}
+
+/*カテゴリボタン*/
+.talent-detail-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin: 8px 0 20px 0;
+}
+
+.talent-detail-buttons button {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.talent-detail-buttons button:hover {
+  background: #ececec;
+}
+
+/*タレント概要 3カラム 左：アイコン / 中：SNS / 右：プロフィール*/
+.talent-overview-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 250px;
+  /* 黒丸3つ分の余白 */
+  margin-top: 30px;
+}
+
+/* 左カラム：タレントアイコン＋名前 */
+.overview-icon {
+  text-align: center;
+}
+
+.talent-detail-icon {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.talent-detail-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+/* 中カラム：SNS */
+.overview-sns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sns-title {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.sns-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.sns-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  /* ボタンサイズ */
+  height: 60px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.sns-button:hover {
+  transform: scale(1.07);
+  opacity: 0.9;
+}
+
+.sns-icon {
+  width: 35px;
+  /* アイコンサイズ */
+  height: 35px;
+  object-fit: contain;
+}
+
+/* 右カラム：公式プロフィール */
+.overview-profile {
+  width: 360px;
+  /* テキスト幅を制限して読みやすく */
+}
+
+.overview-profile h3 {
+  margin-bottom: 8px;
+}
+
+.profile-text {
+  white-space: pre-line;
+  /* DBの改行(\n)をそのまま表示 */
+  line-height: 1.7;
+}
+
+/*アーカイブ一覧（/archive風）*/
+.talent-archives-section {
+  margin-top: 24px;
+}
+
+.talent-detail-archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.talent-detail-archive-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.talent-detail-archive-card .archive-thumbnail {
+  width: 140px;
+  height: 78px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.talent-detail-archive-info h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-decoration: underline;
+  color: #2d2dff;
+}
+
+.talent-detail-archive-info p {
+  font-size: 0.85rem;
+  color: #666;
+}
