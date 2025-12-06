@@ -1,12 +1,6 @@
-/* ページ全体：配信中一覧(nowstr-container)と同じノリ */
 .talent-in-Page {
-  /* max-width は一旦外して、画面幅をめいっぱい使う */
-  /* max-width: 1100px; ← これは消す */
-
   margin: 40px 0 0;
-  /* auto をやめて左寄せにする */
   padding: 0 40px 40px;
-  /* 左右 40px だけ余白を残す（ここは好みで） */
   box-sizing: border-box;
 }
 
@@ -26,7 +20,6 @@
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  /* 検索ボックスは中央寄せのまま */
 }
 
 .search-input {
@@ -68,7 +61,6 @@
   margin-bottom: 8px;
 }
 
-/* タレント一覧の“箱” → 左詰めのまま、内側にちょっと余白（前に気に入ってたやつ） */
 .talent-list-container {
   width: 100%;
   padding: 24px;

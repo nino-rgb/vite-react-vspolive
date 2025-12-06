@@ -1,0 +1,157 @@
+/* === 検索結果ページ全体 === */
+.talent-search-result-page {
+  width: 100%;
+  max-width: 1000px;
+  padding: 16px;
+  text-align: left;
+  /* 全体を左寄せ */
+}
+
+/* 見出し */
+.talent-search-result-page h2 {
+  margin-top: 16px;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+/* エラーメッセージ */
+.error {
+  color: #e53935;
+  margin: 8px 0;
+}
+
+/* === ヘッダー（検索ボックス）=== */
+.archive-header {
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.search-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  /* 左寄せ */
+  align-items: center;
+  gap: 8px;
+}
+
+/* 検索入力 */
+.search-input {
+  width: 260px;
+  /* 固定幅にして左寄せ感を出す */
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #4b7bec;
+  box-shadow: 0 0 0 2px rgba(75, 123, 236, 0.15);
+}
+
+/* 検索ボタン */
+.search-btn {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #4b7bec;
+  color: #fff;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.search-btn:hover {
+  background-color: #3867d6;
+}
+
+.search-btn:active {
+  transform: scale(0.97);
+}
+
+/* === カテゴリ切り替えボタン === */
+.archive-buttons {
+  display: flex;
+  justify-content: flex-start;
+  /* 左寄せ */
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.archive-buttons button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.archive-buttons button:hover {
+  background-color: #e0e0e0;
+}
+
+.archive-buttons button:active {
+  transform: scale(0.97);
+}
+
+/* === タレント一覧カード === */
+.talent-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  justify-items: start;
+  /* 左寄せ感アップ */
+}
+
+/* タレントカード（Link） */
+.talent-card {
+  width: 100%;
+  max-width: 350px;
+  /* 左寄り×カードの自然な幅 */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.1s ease-out, box-shadow 0.15s ease-out;
+}
+
+.talent-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  border-color: #4b7bec;
+}
+
+/* タレント画像 */
+.talent-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* タレント情報 */
+.talent-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.talent-profile {
+  margin: 0;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+  max-height: 3.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

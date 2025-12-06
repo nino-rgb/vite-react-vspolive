@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Talent } from "model/talent";
 import "./talentList.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export const TalentList = () => {
   const [talents, setTalentList] = useState<Talent[]>([]);
   const navigate = useNavigate();
+  const [keywordInput, setKeywordInput] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -20,10 +21,25 @@ export const TalentList = () => {
     <div className="talent-in-Page">
       {/* ヘッダー */}
       <header className="archive-header">
-        <div style={{ backgroundColor: "#ccc", width: 100, height: 40 }}></div>
         <div className="search-wrapper">
-          <input type="text" placeholder="タレント名で検索" className="search-input" />
-          <button className="search-btn">🔍</button>
+          <input
+            type="text"
+            placeholder="タレント名で検索"
+            className="search-input"
+            value={keywordInput}
+            onChange={(e) => setKeywordInput(e.target.value)}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              const trimmed = keywordInput.trim();
+              if (!trimmed) return;
+              // 検索結果ページへ遷移
+              navigate(`/talents/search?keyword=${encodeURIComponent(trimmed)}`);
+            }}
+          >
+            🔍
+          </button>
         </div>
       </header>
       {/* カテゴリボタン */}
@@ -35,14 +51,14 @@ export const TalentList = () => {
       <h2>タレント一覧</h2>
       <div className="talent-list-container">
         {talents.map((talent) => (
-          <div key={talent.id} className="talent-card">
+          <Link key={talent.id} to={`/talents/${talent.id}`} className="talent-card">
             <img src={talent.icon_url} alt={talent.name} className="talent-icon" />
 
             <div className="talent-info">
               <h3>{talent.name}</h3>
               <p>{talent.youtube_profile}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
